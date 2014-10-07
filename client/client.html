@@ -1,0 +1,41 @@
+<head>
+  <title>Image Upload Test</title>
+</head>
+
+<body></body>
+
+<template name="uploadField">
+  <h1>Image Upload Test</h1>
+
+  {{> dropZone}}
+  {{> fileTable}}
+</template>
+
+
+<template name="dropZone">
+  <div>
+    Select file(s) to upload (<b>JPG only</b>)<br/>
+    <input name="files" id="files" type="file" class="fileUploader" multiple>
+  </div>
+</template>
+
+<template name="fileTable">
+  {{#each files}}
+    <div>
+      {{#if isUploaded}}
+        <img src="{{this.url store='images-original'}}" height="64" width="64">
+      {{/if}}
+    </div>
+    <div>{{name}}</div>
+    <div>
+      {{#if isUploaded}}
+        <i>uploaded</i>
+      {{else}}
+        <i>uploading: {{uploadProgress}}%</i>
+      {{/if}}
+      <i class="remove" style="cursor:pointer;">remove</i>
+    </div>
+  {{else}}
+    <h3>No files uploaded.</h3>
+  {{/each}}
+</template>

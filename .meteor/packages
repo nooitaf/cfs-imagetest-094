@@ -1,0 +1,29 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+cfs:filesystem
+cfs:collection
+cfs:collection-filters
+cfs:standard-packages
+cfs:power-queue
+cfs:micro-queue
+cfs:reactive-list
+cfs:ui
+cfs:upload-http
+cfs:transfer
+cfs:tempstore
+cfs:ejson-file
+cfs:worker
+cfs:upload-ddp
+cfs:data-man
+cfs:storage-adapter
+cfs:http-publish
+cfs:http-methods
+cfs:filesaver
+cfs:reactive-property
+cfs:gridfs
+iron:router
+
