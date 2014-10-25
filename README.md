@@ -1,6 +1,8 @@
-cfs-imagetest-0931
+cfs-imagetest-094
 ==================
 
-cfs image upload test app 
+simple cfs image upload test app 
+
+defaults to gridfs
 
 tested with meteor 0.9.4
