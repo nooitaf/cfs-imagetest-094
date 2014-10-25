@@ -1,9 +1,14 @@
-FS.debug = true;
+//__ Debug
+//FS.debug = true;
 
-var ImagesStore = new FS.Store.FileSystem('images-original', {
-  path: '~/uploads/'
-});
+//__ FileStore
+// ---> cfs:filesystem 
+// var ImagesStore = new FS.Store.FileSystem('images-original');
 
+// ---> cfs:gridfs 
+var ImagesStore = new FS.Store.GridFS('images-original');
+
+//__ FileCollection
 Images = new FS.Collection('images', {
   stores: [ImagesStore],
   filter: {
@@ -14,7 +19,6 @@ Images = new FS.Collection('images', {
     }
   }
 });
-
 
 Images.allow({
   insert: function(userId, fileObj) {
@@ -32,10 +36,7 @@ Images.allow({
   fetch: []
 });
 
-
-
 Meteor.publish('images', function() {
   return Images.find({}, { limit: 0 });
 });
-
 

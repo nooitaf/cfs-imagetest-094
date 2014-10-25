@@ -1,4 +1,13 @@
-var ImagesStore = new FS.Store.FileSystem('images-original');
+//__ FileStore
+
+// ---> cfs:filesystem 
+//var ImagesStore = new FS.Store.FileSystem('images-original');
+
+// ---> cfs:gridfs 
+var ImagesStore = new FS.Store.GridFS('images-original');
+
+
+//__ FileCollection
 
 Images = new FS.Collection('images', {
   stores: [ImagesStore],
@@ -12,8 +21,8 @@ Images = new FS.Collection('images', {
 Meteor.subscribe('images');
 
 
+//__ Dropzone
 
-// dropZone
 Template.dropZone.events({
   'change .fileUploader': function(event, temp) {
     FS.Utility.eachFile(event, function(file) {
@@ -24,7 +33,8 @@ Template.dropZone.events({
 });
 
 
-// fileTable
+//__ Filetable
+
 Template.fileTable.files = function() {
   return Images.find({},{ sort: { uploadedAt:-1 } });
 };

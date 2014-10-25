@@ -1,0 +1,27 @@
+html,body {
+	font-family: monospace;
+	margin:0px;
+}
+
+.page-title {
+	padding:10px;
+	margin:0px;
+	color:white;
+	background:black;
+}
+
+
+.box-uploader {
+	padding:15px;
+	background:#ddd;
+}
+
+
+table {
+	width:100%;
+  border-collapse: collapse;
+}
+td {
+	padding:4px;
+	border-bottom:1px solid #ddd;
+}
