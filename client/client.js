@@ -35,9 +35,11 @@ Template.dropZone.events({
 
 //__ Filetable
 
-Template.fileTable.files = function() {
-  return Images.find({},{ sort: { uploadedAt:-1 } });
-};
+Template.fileTable.helpers({
+  files : function() {
+    return Images.find({},{ sort: { uploadedAt:-1 } });
+  };
+});
 
 Template.fileTable.events({
   'click .remove': function(e,t){
