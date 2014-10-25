@@ -38,7 +38,7 @@ Template.dropZone.events({
 Template.fileTable.helpers({
   files : function() {
     return Images.find({},{ sort: { uploadedAt:-1 } });
-  };
+  }
 });
 
 Template.fileTable.events({
